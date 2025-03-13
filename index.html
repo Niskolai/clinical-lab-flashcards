@@ -16,26 +16,108 @@
 
     <script>
         const questions = [
-            { q: "Which of the following are found in association w/megaloblastic anaemia?", answers: ["Neutropenia and thrombocytopenia", "↓ LDH", "↑ RBC levels", "↓ plasma bilirubin"], correct: 0 },
-            { q: "89 F with chronic UTI presents anemia. Likely condition?", answers: ["Anaemia of chronic inflammation", "Hemochromatosis", "IDA", "Acute haemorrhage"], correct: 0 },
-            { q: "Lab findings consistent with hemolytic anaemia?", answers: ["Normal RBS survival ↑ LDH", "Total bilirubin ↑/↓ Normal haptoglobin", "↓ haptoglobin ↑ unconjugated bilirubin", "Normal haptoglobin and marked Hb urea"], correct: 2 },
-            { q: "Excessive Rouleaux formation accompanied by ↑ of?", answers: ["Reticulocyte count", "ESR", "HCT", "RBC count"], correct: 1 },
-            { q: "Inactive lymphocytes in mononucleosis derived from?", answers: ["T lymphocytes", "B lymphocytes", "Monocytes", "Mast cells"], correct: 0 },
-            { q: "Best marker for storage iron?", answers: ["Serum transferrin", "Hb concentration", "Thyroglobin concentration", "Serum ferritin"], correct: 3 },
-            { q: "Not characteristic of megaloblastic anaemia?", answers: ["Pancytopenia", "Target cells", "Hypersegmented neutrophils", "Macrocytic erythrocytic indices"], correct: 1 },
-            { q: "Iron transport protein is called?", answers: ["Ferritin", "Transferrin", "Hemosiderin", "Haptoglobin"], correct: 1 },
-            { q: "Classify anaemia: ↓ haptoglobin, hemosiderinuria?", answers: ["Chronic disease", "Vit B12 deficiency", "IDA", "Hemolytic anaemia"], correct: 3 },
-            { q: "Auer rods NOT seen in?", answers: ["Acute myelomonocytic leukaemia", "Acute lymphoblastic", "Acute myeloblastic M1-M2", "Acute chromio M3"], correct: 1 },
-            { q: "Iron transport protein is?", answers: ["Ferritin", "Transferrin", "Hemosiderin", "Haptoglobin"], correct: 1 },
-            { q: "Anaemia type present in acute leukemia?", answers: ["Microcytic hyperchromic", "Microcytic hypochromic", "Normocytic normochromic", "Macrocytic normochromic"], correct: 2 },
-            { q: "Thrombocytopenia not associated with?", answers: ["↓ platelet production", "Abnormal platelet distribution", "↑ platelet destruction", "↑ proliferation of pluripotent stem cells"], correct: 3 },
-            { q: "Best diagnostic test for diabetic renal disease?", answers: ["Serum creatinine", "Albumin to creatinine ratio", "Serum glucose", "Kidney ultrasound"], correct: 1 },
-            { q: "Hypokalemia associated condition?", answers: ["Addison’s disease", "Hemolytic anemia", "Digoxin intoxication", "Alkalosis"], correct: 3 },
-            { q: "↓ bicarbonate without PCO2 change indicates?", answers: ["Respiratory acidosis", "Respiratory alkalosis", "Metabolic acidosis", "Metabolic alkalosis"], correct: 2 },
-            { q: "Calcium homeostasis maintained by?", answers: ["Thyroxin", "PTH", "25 hydroxy-D3", "All"], correct: 1 },
-            { q: "Urea constituent from protein metabolism?", answers: ["Urea", "Uric acid", "Creatinine", "All"], correct: 3 },
-            { q: "Serum creatinine elevated indicates?", answers: ["Early renal disease", "↓ glomerular filtration", "Same as serum creatine", "Better than creatinine clearance"], correct: 1 },
-            { q: "RBC casts in urine likely indicate?", answers: ["Pyelonephritis", "Nephrotic syndrome", "Acute glomerulonephritis", "UTI"], correct: 2 }
+            const questions = [
+    {
+        q: "Which of the following are found in association w/megaloblastic anaemia?",
+        answers: ["Neutropenia and thrombocytopenia", "↓ LDH", "↑ RBC levels", "↓ plasma bilirubin"],
+        correct: 0
+    },
+    {
+        q: "Which of the following conditions is most likely in an 89 F in hospital for chronic UTI w/proteinuria, Hb 72 g/L, WBC 10,000, RBC 3 million, MCV 78%, ferritin 110 µg/L, serum iron 5.2?",
+        answers: ["Anaemia of chronic inflammation", "Hemochromatosis", "IDA", "Acute haemorrhage"],
+        correct: 0
+    },
+    {
+        q: "Which of the following lab findings is consistent w/hemolytic anaemia?",
+        answers: ["Normal RBS survival ↑ LDH", "Total bilirubin ↑/↓ Normal haptoglobin", "↓ haptoglobin ↑ unconjugated bilirubin", "Normal haptoglobin and marked Hb urea"],
+        correct: 2
+    },
+    {
+        q: "The presence of excessive Rouleaux formation on peripheral blood smear is often accompanied by an increase of:",
+        answers: ["Reticulocyte count", "ESR", "HCT", "RBC count"],
+        correct: 1
+    },
+    {
+        q: "Inactive Lymphocytes seen in mononucleosis is probably derived from:",
+        answers: ["T lymphocytes", "B lymphocytes", "Monocytes", "Mast cells"],
+        correct: 0
+    },
+    {
+        q: "Storage iron is usually best determined by:",
+        answers: ["Serum transferrin", "Hb concentration", "Thyroglobin concentration", "Serum ferritin"],
+        correct: 3
+    },
+    {
+        q: "All are characteristic of megaloblastic anaemia except:",
+        answers: ["Pancytopenia", "Target cells", "Hypersegmented neutrophils", "Macrocytic erythrocytic indices"],
+        correct: 1
+    },
+    {
+        q: "DDx for patient w/hypochromic microcytic anemia except:",
+        answers: ["Beta thalassemia minor", "Iron deficiency anaemia", "Hb CBC", "Anemia of chronic disease"],
+        correct: 2
+    },
+    {
+        q: "Auer rods may be seen in all following except:",
+        answers: ["Acute myelomonocytic leukaemia – M4", "Acute lymphoblastic L1-3", "Acute myeloblastic M1-M2", "Acute chromio M3"],
+        correct: 1
+    },
+    {
+        q: "What is the iron transport protein called?",
+        answers: ["Ferritin", "Transferrin", "Hemosiderin", "Haptoglobin", "Albumin"],
+        correct: 1
+    },
+    {
+        q: "Patient has ↓ haptoglobin, hemosiderinuria, haemoglobinuria. Reticulocyte count 10%. Classification?",
+        answers: ["Anaemia of chronic disease", "Vit B12 deficiency", "IDA", "Hemolytic anaemia"],
+        correct: 3
+    },
+    {
+        q: "Acute lymphoblastic leukaemia, not typical?",
+        answers: ["WHO criteria blasts >20%", "CD10+ poor prognosis", "CNS involvement common", "PAS +ve rxn"],
+        correct: 1
+    },
+    {
+        q: "M component of monoclonal gammopathies?",
+        answers: ["Malignant proliferation B cells", "IgM excess production", "Monoclonal protein", "M heavy chain excess"],
+        correct: 2
+    },
+    {
+        q: "Acute myeloid leukaemia true?",
+        answers: ["Common in children", "Never caused by chemo", "Associated with >20% blasts", "DIC not presenting feature"],
+        correct: 2
+    },
+    {
+        q: "Anaemia in acute leukemia?",
+        answers: ["Microcytic hyperchromic", "Microcytic hypochromic", "Normocytic normochromic", "Macrocytic normochromic"],
+        correct: 2
+    },
+    {
+        q: "Haemolytic anaemia may be due to all except:",
+        answers: ["Hb structure abnormalities", "RBC membrane cytoprotein abnormalities", "Splenic hypersplenism", "Hereditary enzyme deficiencies"],
+        correct: 2
+    },
+    {
+        q: "Characteristic finding in multiple myeloma?",
+        answers: ["Rouleaux formation", "Hypersegmented neutrophils", "Inclusion bodies", "Target cells"],
+        correct: 0
+    },
+    {
+        q: "75% blasts, Sudan black +ve, Peroxidase +ve, CD13 and CD33 +ve. Diagnosis?",
+        answers: ["ALL", "AML", "CML", "Multiple myeloma"],
+        correct: 1
+    },
+    {
+        q: "Beta thalassemia associated with?",
+        answers: ["Reticulocytosis", "↑ Hb A2 levels", "Iron overload", "Splenomegaly"],
+        correct: 1
+    },
+    {
+        q: "40 y/o tired, pale, Hb 100, MCV 75, MCH 23. Most likely diagnosis?",
+        answers: ["Iron deficiency anaemia", "Megaloblastic (folate)", "Megaloblastic (vitamin B12)", "Hemolytic anaemia"],
+        correct: 0
+    }
+];
             // Continue adding up to question 62
         ];
 
