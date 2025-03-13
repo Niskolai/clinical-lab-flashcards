@@ -3,25 +3,40 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Clinical Laboratory Flashcards (Questions 1-20)</title>
+    <title>Clinical Laboratory Flashcards (Interactive)</title>
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body class="bg-gray-100 flex items-center justify-center min-h-screen p-4">
-    <div id="card" class="bg-white p-4 md:p-6 rounded-xl shadow-xl w-full max-w-3xl">
-        <h2 id="question" class="text-base md:text-lg font-semibold mb-4"></h2>
-        <div id="answers" class="space-y-2 md:space-y-3"></div>
-        <div id="feedback" class="mt-3 md:mt-4 font-bold"></div>
-        <button id="next" class="mt-3 md:mt-4 bg-blue-500 hover:bg-blue-600 text-white px-3 py-2 md:px-4 md:py-2 rounded" onclick="nextQuestion()">Next Question</button>
+<body class="bg-gray-100 flex items-center justify-center h-screen">
+    <div id="card" class="bg-white p-6 rounded-xl shadow-xl max-w-2xl w-full">
+        <h2 id="question" class="text-lg font-semibold mb-4"></h2>
+        <div id="answers" class="space-y-3"></div>
+        <div id="feedback" class="mt-4 font-bold"></div>
+        <button id="next" class="mt-4 bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded" onclick="nextQuestion()">Next Question</button>
     </div>
 
     <script>
         const questions = [
             { q: "Which of the following are found in association w/megaloblastic anaemia?", answers: ["Neutropenia and thrombocytopenia", "↓ LDH", "↑ RBC levels", "↓ plasma bilirubin"], correct: 0 },
-            { q: "Which of the following conditions is most likely in an 89 F in hospital for chronic UTI w/proteinuria, Hb 72 g/L, WBC 10,000, RBC 3 million, MCV 78%, ferritin 110 µg/L, serum iron 5.2?", answers: ["Anaemia of chronic inflammation", "Hemochromatosis", "IDA", "Acute haemorrhage"], correct: 0 },
-            { q: "Which of the following lab findings is consistent w/hemolytic anaemia?", answers: ["Normal RBS survival ↑ LDH", "Total bilirubin ↑/↓ Normal haptoglobin", "↓ haptoglobin ↑ unconjugated bilirubin", "Normal haptoglobin and marked Hb urea"], correct: 2 },
-            { q: "The presence of excessive Rouleaux formation on peripheral blood smear is often accompanied by an increase of:", answers: ["Reticulocyte count", "ESR", "HCT", "RBC count"], correct: 1 },
-            { q: "Inactive Lymphocytes seen in mononucleosis is probably derived from:", answers: ["T lymphocytes", "B lymphocytes", "Monocytes", "Mast cells"], correct: 0 }
-            // Add remaining questions 6-20 here
+            { q: "89 F with chronic UTI presents anemia. Likely condition?", answers: ["Anaemia of chronic inflammation", "Hemochromatosis", "IDA", "Acute haemorrhage"], correct: 0 },
+            { q: "Lab findings consistent with hemolytic anaemia?", answers: ["Normal RBS survival ↑ LDH", "Total bilirubin ↑/↓ Normal haptoglobin", "↓ haptoglobin ↑ unconjugated bilirubin", "Normal haptoglobin and marked Hb urea"], correct: 2 },
+            { q: "Excessive Rouleaux formation accompanied by ↑ of?", answers: ["Reticulocyte count", "ESR", "HCT", "RBC count"], correct: 1 },
+            { q: "Inactive lymphocytes in mononucleosis derived from?", answers: ["T lymphocytes", "B lymphocytes", "Monocytes", "Mast cells"], correct: 0 },
+            { q: "Best marker for storage iron?", answers: ["Serum transferrin", "Hb concentration", "Thyroglobin concentration", "Serum ferritin"], correct: 3 },
+            { q: "Not characteristic of megaloblastic anaemia?", answers: ["Pancytopenia", "Target cells", "Hypersegmented neutrophils", "Macrocytic erythrocytic indices"], correct: 1 },
+            { q: "Iron transport protein is called?", answers: ["Ferritin", "Transferrin", "Hemosiderin", "Haptoglobin"], correct: 1 },
+            { q: "Classify anaemia: ↓ haptoglobin, hemosiderinuria?", answers: ["Chronic disease", "Vit B12 deficiency", "IDA", "Hemolytic anaemia"], correct: 3 },
+            { q: "Auer rods NOT seen in?", answers: ["Acute myelomonocytic leukaemia", "Acute lymphoblastic", "Acute myeloblastic M1-M2", "Acute chromio M3"], correct: 1 },
+            { q: "Iron transport protein is?", answers: ["Ferritin", "Transferrin", "Hemosiderin", "Haptoglobin"], correct: 1 },
+            { q: "Anaemia type present in acute leukemia?", answers: ["Microcytic hyperchromic", "Microcytic hypochromic", "Normocytic normochromic", "Macrocytic normochromic"], correct: 2 },
+            { q: "Thrombocytopenia not associated with?", answers: ["↓ platelet production", "Abnormal platelet distribution", "↑ platelet destruction", "↑ proliferation of pluripotent stem cells"], correct: 3 },
+            { q: "Best diagnostic test for diabetic renal disease?", answers: ["Serum creatinine", "Albumin to creatinine ratio", "Serum glucose", "Kidney ultrasound"], correct: 1 },
+            { q: "Hypokalemia associated condition?", answers: ["Addison’s disease", "Hemolytic anemia", "Digoxin intoxication", "Alkalosis"], correct: 3 },
+            { q: "↓ bicarbonate without PCO2 change indicates?", answers: ["Respiratory acidosis", "Respiratory alkalosis", "Metabolic acidosis", "Metabolic alkalosis"], correct: 2 },
+            { q: "Calcium homeostasis maintained by?", answers: ["Thyroxin", "PTH", "25 hydroxy-D3", "All"], correct: 1 },
+            { q: "Urea constituent from protein metabolism?", answers: ["Urea", "Uric acid", "Creatinine", "All"], correct: 3 },
+            { q: "Serum creatinine elevated indicates?", answers: ["Early renal disease", "↓ glomerular filtration", "Same as serum creatine", "Better than creatinine clearance"], correct: 1 },
+            { q: "RBC casts in urine likely indicate?", answers: ["Pyelonephritis", "Nephrotic syndrome", "Acute glomerulonephritis", "UTI"], correct: 2 }
+            // Continue adding up to question 62
         ];
 
         let currentQuestion = 0;
@@ -30,17 +45,20 @@
         function loadQuestion() {
             const q = questions[currentQuestion];
             document.getElementById('question').innerText = q.q;
-            document.getElementById('feedback').innerText = '';
-            document.getElementById('next').style.display = 'none';
+
             const answersDiv = document.getElementById('answers');
             answersDiv.innerHTML = '';
+
             q.answers.forEach((ans, i) => {
                 const btn = document.createElement('button');
                 btn.innerText = ans;
-                btn.className = 'block w-full text-left px-3 py-2 md:px-4 md:py-2 bg-gray-200 hover:bg-gray-300 rounded';
+                btn.className = 'block w-full text-left px-4 py-2 bg-gray-200 hover:bg-gray-300 rounded';
                 btn.onclick = () => checkAnswer(i);
                 answersDiv.appendChild(btn);
             });
+
+            document.getElementById('feedback').innerText = '';
+            document.getElementById('next').style.display = 'none';
         }
 
         function checkAnswer(i) {
@@ -52,7 +70,7 @@
 
         function nextQuestion() {
             if (++currentQuestion < questions.length) loadQuestion();
-            else document.getElementById('card').innerHTML = '<h2 class="text-base md:text-lg font-semibold">You completed all questions!</h2>';
+            else document.getElementById('card').innerHTML = '<h2 class="text-lg font-semibold">You completed all questions!</h2>';
         }
 
         loadQuestion();
