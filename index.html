@@ -63,6 +63,7 @@
     document.getElementById('progress').innerText = `Completed: ${currentQuestion} / ${questions.length}`;
 }
         function loadQuestion() {
+            updateProgress();
             const q = questions[currentQuestion];
             document.getElementById('question').innerText = q.q;
             document.getElementById('feedback').innerText = '';
