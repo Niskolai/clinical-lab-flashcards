@@ -8,6 +8,7 @@
 </head>
 <body class="bg-gray-100 flex items-center justify-center min-h-screen p-4">
     <div id="card" class="bg-white p-4 md:p-6 rounded-xl shadow-xl w-full max-w-3xl">
+        <div id="progress" class="text-lg font-semibold mb-4"></div>
         <h2 id="question" class="text-base md:text-lg font-semibold mb-4"></h2>
         <div id="answers" class="space-y-2 md:space-y-3"></div>
         <div id="feedback" class="mt-3 md:mt-4 font-bold"></div>
@@ -58,7 +59,9 @@
         ];
         let currentQuestion = 0;
         questions.sort(() => Math.random() - 0.5);
-
+        function updateProgress() {
+    document.getElementById('progress').innerText = `Completed: ${currentQuestion} / ${questions.length}`;
+}
         function loadQuestion() {
             const q = questions[currentQuestion];
             document.getElementById('question').innerText = q.q;
@@ -83,9 +86,13 @@
         }
 
         function nextQuestion() {
-            if (++currentQuestion < questions.length) loadQuestion();
-            else document.getElementById('card').innerHTML = '<h2 class="text-base md:text-lg font-semibold">You completed all questions!</h2>';
-        }
+    if (++currentQuestion < questions.length) {
+        loadQuestion();
+        updateProgress(); // <-- This updates the progress after answering a question
+    } else {
+        document.getElementById('card').innerHTML = '<h2 class="text-base md:text-lg font-semibold">You completed all questions!</h2>';
+    }
+}
 
         loadQuestion();
     </script>
